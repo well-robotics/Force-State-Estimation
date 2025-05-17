@@ -1,7 +1,7 @@
 # Force-State-Estimation
 ## Simultaneous Ground Reaction Force and State Estimation via Constrained Moving Horizon Estimation
 
-Accurate ground reaction force (GRF) estimation can significantly improve the adaptability of legged robots in various real-world applications. For instance, with estimated GRF and contact kinematics, the locomotion control and planning assist the robot in overcoming uncertain terrains. The canonical momentum-based methods, formulated as nonlinear observers, do not fully address the noisy measurements and the dependence between floating-base states and the generalized momentum dynamics. In this paper, we present a simultaneous ground reaction force and state estimation framework for legged robots, which systematically addresses the sensor noise and the coupling between states and dynamics. With the floating base orientation estimated separately, a decentralized Moving Horizon Estimation (MHE) method is implemented to fuse the robot dynamics, proprioceptive sensors, exteroceptive sensors, and deterministic contact complementarity constraints in a convex windowed optimization. The proposed method is shown to be capable of providing accurate GRF and state estimation on several legged robots, including the custom-designed humanoid robot Bucky, the open-source educational planar bipedal robot STRIDE, and the quadrupedal robot Unitree Go1, with a frequency of 200Hz and a past time window of 0.04s.
+Accurate ground reaction force (GRF) estimation enhances the adaptability of legged robots in real-world environments. This paper presents a simultaneous GRF and state estimation framework that systematically addresses sensor noise and state-dynamics coupling. A decentralized Moving Horizon Estimation (MHE) approach is proposed, fusing proprioceptive and exteroceptive sensors with deterministic contact constraints in a convex optimization. The method achieves real-time (200 Hz) performance on various legged platforms, including the humanoid robot Bucky, and the quadruped Unitree Go1 & B1.
 
 For more details, please refer to the paper. [[arxiv](https://arxiv.org/pdf/2411.12047)] [[youtube](https://www.youtube.com/watch?v=Bih7cslSkTo&t=2s)]
 
@@ -46,5 +46,8 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install
 source unitree_ros2.sh
 ros2 launch go1_example go1_new_launch.py
 ```
+## Todo
+Compile with Pinocchio for general applicability.
+
 
 # Force-State-Estimation
